@@ -4,25 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello React</title>
+    <title>Hello React + JSX</title>
   </head>
   <body>
     <div id="app"></div>
     <script src="react/react.js"></script>
     <script src="react/react-dom.js"></script>
-    <script>
+    <script src="react/babel.js"></script>
+    <script type="text/babel">
       ReactDOM.render(
-        React.createElement(
-          "h1",
-          { id: "my-heading" },
-          React.createElement(
-            "span",
-            null,
-            "Hello",
-            React.createElement("em", null, " Wonderful")
-          ),
-          " world!"
-        ),
+        <h1 id="my-heading">
+          <span>
+            Hello <em>JSX</em>
+          </span>{" "}
+          world!
+        </h1>,
         document.getElementById("app")
       );
     </script>
