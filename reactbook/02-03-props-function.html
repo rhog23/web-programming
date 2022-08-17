@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Properties in Function Components</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="react/react.js"></script>
+    <script src="react/react-dom.js"></script>
+    <script src="react/babel.js"></script>
+    <script type="text/babel">
+      const MyComponent = function ({ name, job }) {
+        return (
+          <span>
+            My name is <strong>{name}</strong>, the {job.toLowerCase()}
+          </span>
+        );
+      };
+      ReactDOM.render(
+        <MyComponent name="Bill Sullivan" job="Programmer" />,
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
