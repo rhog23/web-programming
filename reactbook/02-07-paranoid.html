@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stateful Component</title>
+    <title>Paranoid</title>
   </head>
   <body>
     <div id="app"></div>
@@ -18,23 +18,44 @@
           this.state = {};
           this.onTextChange = this.onTextChange.bind(this);
         }
+
         onTextChange(event) {
           this.setState({ text: event.target.value });
         }
+
+        componentDidMount() {
+          console.log("component did Mount");
+        }
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+          // if (this.state.text.length > 3) {
+          //   this.setState({
+          //     text: prevState.text || this.props.text,
+          //   });
+          // }
+        }
+
+        shouldComponentUpdate(newProps, newState) {
+          return newState.text.length >= 3 ? true : false;
+        }
+
         render() {
           const text = "text" in this.state ? this.state.text : this.props.text;
           return (
             <div>
               <textarea value={text} onChange={this.onTextChange} />
-              <h3>{text.length}</h3>
+              <p>{text.length}</p>
             </div>
           );
         }
       }
       TextAreaCounter.defaultProps = {
-        text: "Type here...",
+        text: "Hello Data",
       };
-      ReactDOM.render(<TextAreaCounter />, document.getElementById("app"));
+      const myTextAreaCounter = ReactDOM.render(
+        <TextAreaCounter />,
+        document.getElementById("app")
+      );
     </script>
   </body>
 </html>

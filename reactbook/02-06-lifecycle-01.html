@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stateful Component</title>
+    <title>Lifecycle Example</title>
   </head>
   <body>
     <div id="app"></div>
@@ -18,9 +18,38 @@
           this.state = {};
           this.onTextChange = this.onTextChange.bind(this);
         }
+
         onTextChange(event) {
           this.setState({ text: event.target.value });
         }
+
+        componentDidMount() {
+          console.log("component did mount");
+        }
+
+        componentWillUnmount() {
+          console.log("component will unmount");
+        }
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+          console.log(
+            "component did update   ",
+            prevProps,
+            prevState,
+            snapshot
+          );
+        }
+
+        getSnapshotBeforeUpdate(prevProps, prevState) {
+          console.log("get snapshot before update   ", prevProps, prevState);
+          return "hello";
+        }
+
+        shouldComponentUpdate(newProps, newState) {
+          console.log("should component update   ", newProps, newState);
+          return true;
+        }
+
         render() {
           const text = "text" in this.state ? this.state.text : this.props.text;
           return (
@@ -32,9 +61,13 @@
         }
       }
       TextAreaCounter.defaultProps = {
-        text: "Type here...",
+        text: "Hello World!",
       };
-      ReactDOM.render(<TextAreaCounter />, document.getElementById("app"));
+
+      const myTextAreaCounter = ReactDOM.render(
+        <TextAreaCounter />,
+        document.getElementById("app")
+      );
     </script>
   </body>
 </html>
