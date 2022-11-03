@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaflet PopUp</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div id="map" style="width: 600px; height: 400px"></div>
+  </body>
+  <script
+    src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    crossorigin=""
+  ></script>
+  <script>
+    var loc = [1.1569032652719071, 104.0348586385574];
+    var map = L.map("map", {
+      center: loc,
+      zoom: 12,
+    });
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    var myCircle = L.circle([1.1565569290940285, 104.0328297058042], {
+      color: "#2b2d42",
+      fillColor: "#ef233c",
+      weight: 2,
+      fillOpacity: 0.4,
+      radius: 300,
+    })
+      .addTo(map)
+      .bindPopup("Hellooow 😁");
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent(
+          `${e.latlng["lat"].toString()}, ${e.latlng["lng"].toString()}`
+        )
+        .openOn(map);
+    }
+
+    map.on("click", onMapClick);
+
+    var loc = [1.1292434251202235, 104.03422206883228];
+    var myMarker = L.marker(loc, {
+      title: "MyPoint",
+    }).addTo(map);
+
+    myMarker.bindPopup(
+      "<h1>A Marker</h1><p>Informasi tentang marker</p><ul><li>Info 1</li><li>Info 2</li><li>Info 3</li></ul>"
+    );
+  </script>
+</html>

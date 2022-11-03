@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaflet Mutli Polylines</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div id="map" style="width: 600px; height: 400px"></div>
+  </body>
+  <script
+    src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    crossorigin=""
+  ></script>
+  <script>
+    var loc = [1.1292434251202235, 104.03422206883228];
+    var map = L.map("map", {
+      center: loc,
+      zoom: 12,
+    });
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    var mPolyline = L.polyline(
+      [
+        [
+          [1.1316891222019967, 104.0266258813475],
+          [1.125510514761242, 104.03709741713706],
+          [1.1388975606666751, 104.03769819702354],
+        ],
+        [
+          [1.1226788191529993, 104.06370322594131],
+          [1.095735982385205, 104.06467368841429],
+          [1.103745893827943, 104.10206274832002],
+        ],
+      ],
+      { color: "blue", weight: 2 }
+    ).addTo(map);
+  </script>
+</html>
