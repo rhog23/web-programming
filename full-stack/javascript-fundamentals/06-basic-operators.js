@@ -21,3 +21,7 @@ true + false; // 1
 null + 1; // 1
 undefined + 1; // NaN
 " \t \n" - 2; // -2
+
+let g = prompt("First number?", 1);
+let h = prompt("Second number?", 2);
+alert(+g + +h);
