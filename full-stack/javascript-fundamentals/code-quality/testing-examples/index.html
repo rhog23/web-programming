@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- mocha css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
+    />
+
+    <!-- mocha framework -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+
+    <script>
+      mocha.setup("bdd"); // minimal setup for mocha
+    </script>
+
+    <!-- chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+      let assert = chai.assert;
+    </script>
+  </head>
+  <body>
+    <script>
+      function pow(x, n) {
+        if (n < 0 || Math.round(n) != n) {
+          return NaN;
+        }
+        return x ** n;
+      }
+    </script>
+    <script src="test.js"></script>
+    <!-- element with id="mocha" will display test results -->
+    <div id="mocha"></div>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
