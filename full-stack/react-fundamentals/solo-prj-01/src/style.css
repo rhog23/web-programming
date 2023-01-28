@@ -5,4 +5,126 @@
 
 body {
     background-color: #23252C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10em;
+}
+
+.card {
+    padding: 24px 36px;
+    max-width: 300px;
+}
+
+.card-top-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    width: inherit;
+    background-color: antiquewhite;
+    max-height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-top-image > img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.card-info {
+    background-color: #1A1B21;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding-top: 21px; 
+}
+
+.card-title {
+    color: white;
+    font-size: 25px;
+}
+
+.card-m-text {
+    color: #F3BF99;
+    font-size: 12px;
+}
+
+.card-text {
+    color: white;
+    font-size: 10px;
+}
+
+.card-btn-group {
+    background-color: #1A1B21;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 17px;
+    padding: 15px 36px 0px 36px;
+}
+
+.card-btn-group > div {
+    width: 115px;
+    padding: 9px 13px 9px 11px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.email-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: white;
+}
+
+.linkedin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #5093E2;
+    color: white;
+}
+
+.card-content {
+    background-color: #1A1B21;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 24px 36px;
+}
+
+.card-content > h1 {
+    font-size: 16px;
+}
+
+.card-content > p {
+    font-size: 10px;
+    line-height: 150%;
+    margin-top: 5px;
+}
+
+.interest-title {
+    margin-top: 27px;
+}
+
+.card-footer {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background-color: #161619;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 24px;
+    font-size: 1.5em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

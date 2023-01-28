@@ -1,3 +1,13 @@
+import CardImage from "./components/CardImage";
+import CardBody from "./components/CardBody";
+import CardFooter from "./components/CardFooter";
+
 export default function App() {
-  return <h1>Hello Digital Business Card</h1>;
+  return (
+    <div className="card">
+      <CardImage />
+      <CardBody />
+      <CardFooter />
+    </div>
+  );
 }
