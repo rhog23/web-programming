@@ -14,10 +14,13 @@ nav {
   max-width: 100px;
 }
 
+section {
+  padding: 20px;
+}
+
 .hero--section {
   display: flex;
   flex-flow: column;
-  padding: 20px;
 }
 
 .hero--img {
@@ -31,3 +34,41 @@ nav {
   margin-top: 32px;
   margin-bottom: 16px;
 }
+
+.card--section {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: inherit;
+  overflow-y: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 180px;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.card--img {
+  max-width: 100%;
+  border-radius: 9px;
+}
+
+.card--rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.card--rating > i {
+  color: #FE395C;
+}
+
+.card--price {
+  font-weight: bold;
+}
+
+.gray-text {
+  color: #918E9B; }
