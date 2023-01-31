@@ -13,6 +13,7 @@ export default function Card(props) {
   } = props;
   return (
     <div className="card">
+      <div className="card--badge">SOLD OUT</div>
       <p hidden>{key}</p>
       <img
         className="card--img"
@@ -32,7 +33,7 @@ export default function Card(props) {
         <strong>From $</strong>
         <span className="card--price">{price}</span> / person
       </p>
-      <p>Available spots: {openSpots}</p>
+      <p>Available spots: {openSpots || "test"}</p>
     </div>
   );
 }
