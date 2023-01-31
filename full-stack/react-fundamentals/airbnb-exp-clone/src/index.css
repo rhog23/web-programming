@@ -37,7 +37,6 @@ section {
 
 .card--section {
   display: flex;
-  align-items: center;
   gap: 18px;
   max-width: inherit;
   overflow-y: auto;
@@ -46,6 +45,7 @@ section {
 .card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
   max-width: 180px;
   gap: 8px;
   font-size: 12px;
