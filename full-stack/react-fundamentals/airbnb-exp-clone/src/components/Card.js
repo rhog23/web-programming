@@ -11,9 +11,15 @@ export default function Card(props) {
     location,
     openSpots,
   } = props;
+  let badgeText;
+  if (openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (location.toLowerCase() === "online") {
+    badgeText = "ONLINE";
+  }
   return (
     <div className="card">
-      {openSpots === 0 && <div className="card--badge">SOLD OUT</div>}
+      {badgeText && <div className="card--badge">{badgeText}</div>}
       <p hidden>{key}</p>
       <img
         className="card--img"
