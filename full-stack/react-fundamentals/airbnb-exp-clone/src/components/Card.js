@@ -1,37 +1,35 @@
 // import profilePic from "../images/person-1.png";
 export default function Card(props) {
-  const { key, item } = props;
   let badgeText;
-  if (item.openSpots === 0) {
+  if (props.openSpots === 0) {
     badgeText = "SOLD OUT";
-  } else if (item.location.toLowerCase() === "online") {
+  } else if (props.location.toLowerCase() === "online") {
     badgeText = "ONLINE";
   }
   return (
     <div className="card">
       {badgeText && <div className="card--badge">{badgeText}</div>}
-      <p hidden>{key}</p>
+      <p hidden>{props.id}</p>
       <img
         className="card--img"
-        src={require(`../images/${item.coverImg}`)}
+        src={require(`../images/${props.coverImg}`)}
         alt="mentor profile pic"
       />
       <div className="card--rating">
         <i class="la la-star"></i>
-        <span className="card--rating_score">{item.stats.rating}</span>
+        <span className="card--rating_score">{props.stats.rating}</span>
         <span className="card--rating_count gray-text">
-          ({item.stats.reviewCount})
+          ({props.stats.reviewCount})
         </span>
         <span className="gray-text">•</span>
-        <span className="card--country gray-text">{item.location}</span>
+        <span className="card--country gray-text">{props.location}</span>
       </div>
-      <p className="card--title">{item.title}</p>
-      <p>{item.description}</p>
+      <p className="card--title">{props.title}</p>
+      <p>{props.description}</p>
       <p>
         <strong>From $</strong>
-        <span className="card--price">{item.price}</span> / person
+        <span className="card--price">{props.price}</span> / person
       </p>
-      {/* <p>Available spots: {openSpots || "test"}</p> */}
     </div>
   );
 }
