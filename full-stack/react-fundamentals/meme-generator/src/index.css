@@ -29,18 +29,30 @@
   font-weight: 500;
 }
 
-.meme--form {
-  display: flex;
-  justify-content: center;
-  margin-top: 36px;
-  margin-bottom: 16px;
-  gap: 100px;
+main {
+  padding: 60px;
 }
 
-.meme--form > input {
+.form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  margin-top: 36px;
+  margin-bottom: 16px;
+  gap: 20px;
+}
+
+.form--button {
+  grid-column:1 / -1;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90.41deg, #711F8D 1.15%, #A818DA 100%);
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+}
+
+.form--input {
   border:1px solid #D5D4D8;
   border-radius: 8px;
   padding: 12px;
-  width: 360px;
-  height: 48px;
 } 
