@@ -64,3 +64,11 @@ main {
   max-width: 60%;
   align-self: center;
 }
+
+.box {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-right: 5px;
+}
