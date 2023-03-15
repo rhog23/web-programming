@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
-import Form from "./components/Form";
+import Signup from "./components/Signup";
 function App() {
   return (
     <div>
-      <Header />
-      <Meme />
-      <Form />
+      {/* <Header />
+      <Meme /> */}
+      <Signup />
     </div>
   );
 }
