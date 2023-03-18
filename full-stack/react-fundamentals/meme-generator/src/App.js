@@ -5,9 +5,8 @@ import Signup from "./components/Signup";
 function App() {
   return (
     <div>
-      {/* <Header />
-      <Meme /> */}
-      <Signup />
+      <Header />
+      <Meme />
     </div>
   );
 }
