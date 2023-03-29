@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
-import WindowTracker from "./components/WindowTracker";
+// import WindowTracker from "./components/WindowTracker";
 function App() {
   /*   const [starWarsData, setStarWarsData] = React.useState({});
   const [count, setCount] = React.useState(1);
@@ -19,16 +19,16 @@ function App() {
     },
     [count]
   ); */
-  // React.useEffect(() => {
-  //   console.log("effect ran");
-  //   fetch("https://swapi.dev/api/people/1")
-  //     .then((res) => res.json())
-  //     .then((data) => setStarWarsData(data));
-  // }, [starWarsData]);
-  const [show, setShow] = React.useState(true);
+  /*   React.useEffect(() => {
+    console.log("effect ran");
+    fetch("https://swapi.dev/api/people/1")
+      .then((res) => res.json())
+      .then((data) => setStarWarsData(data));
+  }, [starWarsData]); */
+  /* const [show, setShow] = React.useState(true);
   function toggle() {
     setShow((prevShow) => !prevShow);
-  }
+  } */
   return (
     <div>
       <Header />
@@ -37,8 +37,8 @@ function App() {
         <button onClick={getCharacter}>Get Next Character</button>
         <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
       </div> */}
-      <button onClick={toggle}>Toggle WindowTracker</button>
-      {show && <WindowTracker />}
+      {/* <button onClick={toggle}>Toggle WindowTracker</button>
+      {show && <WindowTracker />} */}
     </div>
   );
 }
