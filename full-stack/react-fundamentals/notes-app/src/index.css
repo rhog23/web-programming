@@ -17,6 +17,10 @@ button:focus {
   overflow-y: auto;
 }
 
+.split {
+  background-color: #faedcd;
+}
+
 .sidebar {
   width: 20%;
   height: 100vh;
@@ -44,7 +48,8 @@ button:focus {
   font-size: 1.5rem;
 }
 
-.first-note:active, .new-note:active {
+.first-note:active,
+.new-note:active {
   background-color: #e76f51;
 }
 
@@ -57,7 +62,6 @@ button:focus {
   padding: 1rem;
   color: white;
 }
-
 
 .editor {
   width: 80%;
