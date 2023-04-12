@@ -53,6 +53,11 @@ button:focus {
   background-color: #e76f51;
 }
 
+.first-note:hover,
+.new-note:hover {
+  background-color: #e76f51;
+}
+
 .first-note {
   margin-top: 1rem;
   cursor: pointer;
@@ -76,6 +81,10 @@ button:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.title:hover {
+  background-color: #e76f51;
 }
 
 .title--delete {
@@ -105,6 +114,10 @@ button:focus {
 }
 
 .selected-note {
+  background-color: #283618;
+}
+
+.selected-note:hover {
   background-color: #283618;
 }
 
