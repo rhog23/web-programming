@@ -1,7 +1,7 @@
 const API =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9549acd684db225930b009a5380931cb&page=1";
 const IMAGE_PATH = "https://www.themoviedb.org/t/p/w220_and_h330_face";
-const SEARCHAPI =
+const SEARCH_API =
   "https://api.themoviedb.org/3/search/movie?&api_key=9549acd684db225930b009a5380931cb&query=";
 
 const main = document.getElementById("movie--cards");
@@ -35,6 +35,15 @@ function getMovies(url) {
     });
 }
 
-
-
 getMovies(API);
+
+search.addEventListener("change", (e) => {
+  e.preventDefault();
+  main.innerHTML = "";
+
+  const searchQuery = e.target.value;
+  if (searchQuery) {
+    getMovies(SEARCH_API + searchQuery);
+    e.target.value = "";
+  }
+});
