@@ -44,7 +44,7 @@ export default class ReviewsDAO {
     try {
       const updateResponse = await reviews.updateOne(
         {
-          _id: ObjectId(reviewId),
+          _id: new ObjectId(reviewId),
         },
         { $set: { user: user, review: review } }
       );
@@ -58,7 +58,7 @@ export default class ReviewsDAO {
   static async deleteReview(reviewId) {
     try {
       const deleteResponse = await reviews.deleteOne({
-        _id: ObjectId(reviewId),
+        _id: new ObjectId(reviewId),
       });
       return deleteResponse;
     } catch (e) {
