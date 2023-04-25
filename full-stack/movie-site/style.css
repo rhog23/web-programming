@@ -59,9 +59,20 @@ body {
 }
 
 .card--content {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
 }
 
 .card--body {
   margin-top: 1rem;
+}
+
+.card--reviews {
+  color: white;
+  text-decoration: none;
+}
+
+#movie--reviews {
+  color: white;
 }
