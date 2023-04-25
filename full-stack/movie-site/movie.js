@@ -100,3 +100,11 @@ async function saveReview(reviewInputId, userInputId, id = "") {
       });
   }
 }
+
+async function deleteReview(reviewId) {
+  fetch(`${API}${reviewId}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((res) => location.reload());
+}
