@@ -9,22 +9,25 @@ title.innerText = movieTitle;
 
 const insertForm = `
     <div class="card">
-        <h3>New Review</h3>
-        <p>
-            <strong>Review: </strong>
-            <input type="text" id="new_review" value="">
-        </p>
-        <p>
-            <strong>User: </strong>
-            <input type="text" id="new_user" value="">
-        </p>
-        <p>
-            <a href="#" onclick="saveReview('new_review', 'new_user')">💾</a>
-        </p>
+        <div class="card--content">
+          <div class="card--body">
+            <p>
+              <strong>Review: </strong>
+              <input type="text" id="new_review" value="">
+            </p>
+            <p>
+              <strong>User: </strong>
+              <input type="text" id="new_user" value="">
+            </p>
+          </div>
+          <div class="card--footer">
+              <a href="#" onclick="saveReview('new_review', 'new_user')">💾</a>
+          </div>
+        </div>
     </div>
 `;
 
-main.innerHTML += insertForm;
+document.getElementById("movie--info").innerHTML += insertForm;
 
 getReviews(API);
 
@@ -38,10 +41,10 @@ function getReviews(url) {
                    <div class="card--body">
                      <p><strong>Review: </strong>${review.review}</p>
                      <p><strong>User: </strong>${review.user}</p>
-                     <p>
-                     <a href="#" onclick="editReview('${review._id}', '${review.review}', '${review.user}')">✏️</a>
-                     <a href="#" onclick="deleteReview('${review._id}')">🗑️</a>
-                     </p>
+                   </div>
+                   <div class="card--footer">
+                    <a href="#" onclick="editReview('${review._id}', '${review.review}', '${review.user}')">✏️</a>
+                    <a href="#" onclick="deleteReview('${review._id}')">🗑️</a>
                    </div>
                  </div>
                </div>`;

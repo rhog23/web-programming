@@ -21,11 +21,11 @@ function getMovies(url) {
         />
         <div class="card--content">
           <div class="card--title">
-            <h3>${result.title}</h3>
-            <a href="movie.html?id=${result.id}&title=${
-          result.title
-        }" class="card--reviews">Reviews</a>
+            <p>${result.title}</p>
           </div>
+          <a href="movie.html?id=${result.id}&title=${
+          result.title
+        }" class="btn--review">Reviews</a>
           <div class="card--body">
             <p>
               ${result.overview.substring(0, 50) + "..."}
