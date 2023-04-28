@@ -1,10 +1,17 @@
 import Input from "@/components/Input";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [variant, setVariant] = useState("login");
+
+  const toggleVariant = useCallback(() => {
+    setVariant((currentVariant) =>
+      currentVariant === "login" ? "register" : "login"
+    );
+  }, []);
 
   return (
     <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -15,14 +22,18 @@ const Auth = () => {
         </nav>
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
-            <h2 className="text-white text-4xl mb-8 font-semibold">Sign in</h2>
+            <h2 className="text-white text-4xl mb-8 font-semibold">
+              {variant === "login" ? "Login" : "Register"}
+            </h2>
             <div className="flex flex-col gap-4">
-              <Input
-                label="Username"
-                onChange={(ev) => setUsername(ev.target.value)}
-                id="username"
-                value={username}
-              />
+              {variant === "register" && (
+                <Input
+                  label="Username"
+                  onChange={(ev) => setUsername(ev.target.value)}
+                  id="username"
+                  value={username}
+                />
+              )}
               <Input
                 label="Email"
                 onChange={(ev) => setEmail(ev.target.value)}
@@ -38,6 +49,20 @@ const Auth = () => {
                 value={password}
               />
             </div>
+            <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+              {variant === "login" ? "Login" : "Sign up"}
+            </button>
+            <p className="text-neutral-500 mt-12">
+              {variant === "login"
+                ? "First time using Netflix?"
+                : "Already have an account?"}
+              <span
+                onClick={toggleVariant}
+                className="text-white ml-1 hover:underline cursor-pointer"
+              >
+                {variant === "login" ? "Create an account" : "Login"}
+              </span>
+            </p>
           </div>
         </div>
       </div>
