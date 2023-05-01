@@ -29,7 +29,7 @@ export default NextAuth({
           type: "password",
         },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Email and password are required");
         }
