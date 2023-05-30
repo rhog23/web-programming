@@ -9,7 +9,7 @@ const otherCountries = ["England", "USA", "China", "Russia", "Ukraine"];
 const worldCountries = [...countries, ...otherCountries];
 console.log(worldCountries);
 
-function test({ ...obj }) {
+function test({ name, age }) {
   console.log(`${name}, ${age}`);
 }
 
