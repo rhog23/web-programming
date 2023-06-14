@@ -1,0 +1,12 @@
+const currency = new Map(
+  Object.entries({
+    USD: 14000,
+    JPY: 131,
+    SGD: 11000,
+    MYR: 3500,
+  })
+);
+
+const priceInJPY = 5000;
+const priceInIDR = currency.get("JPY") * priceInJPY;
+console.log(priceInIDR);
