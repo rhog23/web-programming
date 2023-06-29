@@ -1,19 +1,13 @@
 import React from "react";
 
-/**
- * Interface to be implemented by the Input component
- */
 interface InputProps {
   id: string;
   onChange: any;
   value: string;
   label: string;
-  type?: string; // optional
+  type?: string;
 }
 
-/**
- * FC = FunctionalComponent
- */
 const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
   return (
     <div className="relative">
@@ -23,20 +17,19 @@ const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
         type={type}
         onChange={onChange}
         className="
-        block 
-        rounded-md
-        px-6
-        pt-6
-        pb-1
-        w-full
-        text-md
-        text-white
-        bg-neutral-700
-        appearance-none
-        focus:outline-none
-        focus:ring-0
-        peer
-        "
+            block
+            rounded-md
+            px-6
+            pt-6
+            pb-1
+            w-full
+            text-md
+            text-white
+            bg-neutral-700
+            appearance-none
+            focus:outline-none
+            focus:ring-0
+            peer"
         placeholder=" "
       />
       <label
@@ -44,7 +37,7 @@ const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
       absolute
       text-md
       text-zinc-400
-      duration-100
+      duration-150
       transform
       -translate-y-3
       scale-75
@@ -55,8 +48,7 @@ const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
       peer-placeholder-shown:scale-100
       peer-placeholder-shown:translate-y-0
       peer-focus:scale-75
-      peer-focus:-translate-y-3
-      "
+      peer-focus:-translate-y-3"
         htmlFor={id}
       >
         {label}

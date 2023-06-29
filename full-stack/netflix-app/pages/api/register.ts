@@ -9,11 +9,9 @@ export default async function handler(
   if (req.method !== "POST") {
     return res.status(405).end();
   }
-
   try {
     const { email, name, password } = req.body;
 
-    // checks if an email has been taken
     const existingUser = await prismadb.user.findUnique({
       where: {
         email: email,
