@@ -27,13 +27,12 @@ const Auth = () => {
         email,
         password,
         redirect: false,
-        callbackUrl: "/",
+        callbackUrl: "/profiles",
       });
-      router.push("/");
     } catch (error) {
       console.log(error);
     }
-  }, [email, password, router]);
+  }, [email, password]);
 
   /* handles register */
   const register = useCallback(async () => {
@@ -102,7 +101,7 @@ const Auth = () => {
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center cursor-pointer"
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: "/",
+                    callbackUrl: "/profiles",
                   })
                 }
               >
@@ -112,7 +111,7 @@ const Auth = () => {
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center cursor-pointer"
                 onClick={() =>
                   signIn("github", {
-                    callbackUrl: "/",
+                    callbackUrl: "/profiles",
                   })
                 }
               >
