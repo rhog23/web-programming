@@ -1,6 +1,7 @@
-import useCurrentUser from "@/hooks/useCurrentUser";
+import Billboard from "@/components/Billboard";
+import Navbar from "@/components/Navbar";
 import { NextPageContext } from "next";
-import { getSession, signOut } from "next-auth/react";
+import { getSession } from "next-auth/react";
 
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
@@ -25,17 +26,10 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 export default function Home() {
-  const { data: user } = useCurrentUser();
   return (
     <main>
-      <h1 className="text-2xl text-blue-500">Netflix App</h1>
-      <p className="text-white">Logged in as: {user?.name}</p>
-      <button
-        onClick={() => signOut()}
-        className="px-5 w-auto h-10 bg-slate-200"
-      >
-        Sign Out
-      </button>
+      <Navbar />
+      <Billboard />
     </main>
   );
 }
