@@ -27,12 +27,13 @@ const Auth = () => {
         email,
         password,
         redirect: false,
-        callbackUrl: "/profiles",
+        callbackUrl: "/",
       });
+      router.push("/profiles");
     } catch (error) {
       console.log(error);
     }
-  }, [email, password]);
+  }, [email, password, router]);
 
   /* handles register */
   const register = useCallback(async () => {

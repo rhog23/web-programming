@@ -1,12 +1,12 @@
+import NextAuth, { AuthOptions } from "next-auth";
 import prismadb from "@/libs/prismadb";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { compare } from "bcrypt";
-import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
-export default NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID || "",
@@ -30,24 +30,18 @@ export default NextAuth({
         },
       },
       async authorize(credentials) {
-        /* Checks whether email and password are not empty */
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Require email and password");
         }
 
-        /* Getting user data from db */
         const user = await prismadb.user.findUnique({
-          where: {
-            email: credentials.email,
-          },
+          where: { email: credentials.email },
         });
 
-        /* Checks user */
         if (!user || !user.hashedPassword) {
-          throw new Error("Email does not exists.");
+          throw new Error("Email doesn't exist");
         }
 
-        /* Compares password */
         const isCorrectPassword = await compare(
           credentials.password,
           user.hashedPassword
@@ -66,11 +60,11 @@ export default NextAuth({
   },
   debug: process.env.NODE_ENV === "development",
   adapter: PrismaAdapter(prismadb),
-  session: {
-    strategy: "jwt",
-  },
+  session: { strategy: "jwt" },
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+export default NextAuth(authOptions);
