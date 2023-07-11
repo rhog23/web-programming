@@ -11,7 +11,6 @@ const useMovie = (id?: string) => {
       revalidateOnReconnect: false,
     }
   );
-
   return {
     data,
     error,

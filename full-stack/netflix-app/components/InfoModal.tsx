@@ -32,7 +32,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
   }
 
   return (
-    <div className="z-50 transition duration-300 bg-black bg-opacity-80 justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0">
+    <div className="z-50 transition duration-300 bg-black bg-opacity-80 flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0">
       <div className="relative w-auto mx-auto max-w-3xl rounded-md overflow-hidden">
         <div
           className={`${
@@ -66,9 +66,9 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
           </div>
           <div className="px-12 py-8">
             <p className="text-green-400 font-semibold text-lg">New</p>
-            <p className="text-white text-lg">{data?.duration}</p>
-            <p className="text-white text-lg">{data?.genre}</p>
-            <p className="text-white text-lg">{data?.description}</p>
+            <p className="text-white">Duration: {data?.duration}</p>
+            <p className="text-white">Genre: {data?.genre}</p>
+            <p className="text-white">{data?.description}</p>
           </div>
         </div>
       </div>
