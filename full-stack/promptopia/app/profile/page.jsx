@@ -9,6 +9,7 @@ import Profile from "@/components/Profile";
 const MyProfile = () => {
   const { data: session } = useSession();
   const [posts, setPosts] = useState([]);
+  const router = useRouter();
   /* fetching data from db */
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,8 +23,11 @@ const MyProfile = () => {
       fetchPosts();
     }
   }, [session]);
-  const handleEdit = () => {};
-  const handleDelete = async () => {};
+  const handleEdit = (post) => {
+    /* redirect user to the edit page */
+    router.push(`update-prompt?id=${post._id}`);
+  };
+  const handleDelete = async (post) => {};
   return (
     <Profile
       name={session?.user.id ? `${session?.user.name}'s` : "My"}
