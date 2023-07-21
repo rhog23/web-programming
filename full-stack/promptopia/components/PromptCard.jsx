@@ -5,13 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-const PromptCard = ({
-  key,
-  post,
-  handleTagClick,
-  handleEdit,
-  handleDelete,
-}) => {
+const PromptCard = ({ id, post, handleTagClick, handleEdit, handleDelete }) => {
   const pathName = usePathname();
   const router = useRouter();
   const { data: session } = useSession();
@@ -23,7 +17,7 @@ const PromptCard = ({
     setTimeout(() => setCopied(""), 3000);
   };
   return (
-    <div className="prompt_card" key={key}>
+    <div className="prompt_card" key={id}>
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image
