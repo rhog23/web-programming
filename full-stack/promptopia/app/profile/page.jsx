@@ -22,7 +22,7 @@ const MyProfile = () => {
     if (session?.user.id) {
       fetchPosts();
     }
-  }, [session]);
+  }, [session?.user.id]);
 
   const handleEdit = (post) => {
     /* redirect user to the edit page */
