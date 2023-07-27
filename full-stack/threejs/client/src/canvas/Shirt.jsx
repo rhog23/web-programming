@@ -14,7 +14,7 @@ const Shirt = () => {
   const fullTexture = useTexture(snap.fullDecal);
 
   useFrame((state, delta) => {
-    easing.dampC(materials.lambert1.color, snap.shirtColor, 0.25, delta);
+    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
   });
 
   // to make react render the model when the state changes
