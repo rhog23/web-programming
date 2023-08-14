@@ -21,7 +21,7 @@ const Card = ({ _id, name, prompt, photo }) => {
             </div>
             <p className="text-white text-sm">{name}</p>
           </div>
-          <buton
+          <button
             type="button"
             onClick={() => downloadImage(_id, photo)}
             className="cursor-pointer outline-none bg-transparent border-none"
@@ -31,7 +31,7 @@ const Card = ({ _id, name, prompt, photo }) => {
               alt="download"
               className="w-6 h-6 object-contain invert"
             />
-          </buton>
+          </button>
         </div>
       </div>
     </div>
