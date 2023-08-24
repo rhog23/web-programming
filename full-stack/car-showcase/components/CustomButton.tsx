@@ -7,6 +7,9 @@ const CustomButton = ({
   title,
   btnType,
   containerStyles,
+  textStyles,
+  rightIcon,
+  isDisabled,
   handleClick,
 }: CustomButtonProps) => {
   return (
@@ -16,7 +19,17 @@ const CustomButton = ({
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
-      <span className={`flex-1`}>{title}</span>
+      <span className={`flex-1 ${textStyles}`}>{title}</span>
+      {rightIcon && (
+        <div className="relative w-7 h-7">
+          <Image
+            className="rounded-full"
+            src={rightIcon}
+            fill
+            alt="right arrow"
+          />
+        </div>
+      )}
     </button>
   );
 };

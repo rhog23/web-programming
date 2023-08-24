@@ -27,7 +27,7 @@ export default async function Home() {
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
-                <CarCard car={car} />
+                <CarCard key={car.make} car={car} />
               ))}
             </div>
           </section>
