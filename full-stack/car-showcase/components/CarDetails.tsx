@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CarDetailsProps } from "@/types";
 import { useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { generateCarImageUrl } from "@/utils";
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
@@ -55,7 +56,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-gradient-to-r from-sky-500 to-indigo-500 bg-cover bg-center rounded-t-lg">
                       <Image
-                        src={"/hero.png"}
+                        src={generateCarImageUrl(car)}
                         alt="car model"
                         fill
                         priority
@@ -66,7 +67,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "29")}
                           alt="car model"
                           fill
                           priority
@@ -75,7 +76,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "33")}
                           alt="car model"
                           fill
                           priority
@@ -84,7 +85,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "13")}
                           alt="car model"
                           fill
                           priority

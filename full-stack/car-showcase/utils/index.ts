@@ -1,7 +1,7 @@
 import { CarProps } from "@/types";
 
 export async function fetchCars() {
-  const url = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=venza";
+  const url = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera";
   const options = {
     method: "GET",
     headers: {
