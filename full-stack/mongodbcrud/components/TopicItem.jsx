@@ -14,7 +14,7 @@ const TopicItem = ({ topic }) => {
         <div>{topic.description}</div>
       </div>
       <div className="flex gap-5">
-        <RemoveBtn />
+        <RemoveBtn id={topic._id} />
         <Link href={`/edit-topic/${topic._id}`}>
           <CiEdit size={24} className="text-amber-700" />
         </Link>
