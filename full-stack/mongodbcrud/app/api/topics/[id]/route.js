@@ -16,7 +16,10 @@ export const PUT = async (request, { params }) => {
     await Topic.findByIdAndUpdate(id, { title, description });
 
     // Respond with a success message and status code 200 (OK)
-    return NextResponse.json({ message: "Topic updated" }, { status: 200 });
+    return NextResponse.json(
+      { message: "[INFO] ✅ Topic Updated" },
+      { status: 200 }
+    );
   } catch (error) {
     // Handle errors and respond with an appropriate error message
     console.error("[ERROR] ❌ Failed to update topic:", error.message);
