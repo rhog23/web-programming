@@ -50,7 +50,7 @@ export const GET = async () => {
   }
 };
 
-export const DELETE = async (req) => {
+export const DELETE = async (req) => { 
   const id = req.nextUrl.searchParams.get("id");
   await connectMongoDB();
 
