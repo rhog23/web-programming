@@ -1,23 +1,62 @@
-import React from "react";
-import RemoveBtn from "./RemoveBtn";
-import Link from "next/link";
-import { CiEdit } from "react-icons/ci";
+"use client";
 
+import React, { useEffect, useState } from "react";
+import TopicItem from "./TopicItem";
+
+// Function to fetch topics from the API
+const fetchTopics = async () => {
+  try {
+    // Using relative URL for flexibility
+    const res = await fetch("/api/topics", { cache: "no-cache" });
+    return res.json();
+  } catch (error) {
+    console.error("[ERROR] ❌ Failed to fetch topics");
+    throw error;
+  }
+};
+
+// Component to render the list of topics
 const TopicsList = () => {
+  // State to manage topics, loading state, and error state
+  const [topics, setTopics] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Function to fetch data when the component mounts
+    const fetchData = async () => {
+      try {
+        // Fetch topics and update state
+        const { topics } = await fetchTopics();
+        setTopics(topics);
+        setLoading(false);
+      } catch (error) {
+        // Handle errors and update state
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    // Invoke the fetch function
+    fetchData();
+  }, []); // Empty dependency array to ensure it runs only once when the component mounts
+
+  // Render loading state
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  // Render error state
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  // Render the list of topics
   return (
     <React.Fragment>
-      <div className="p-4 border border-zinc-300 my-3 flex justify-between gap-5 items-start">
-        <div>
-          <h2 className="font-bold text-2xl">Topic Title</h2>
-          <div>Topic Description</div>
-        </div>
-        <div className="flex gap-5">
-          <RemoveBtn />
-          <Link href={"/edit-topic/123"}>
-            <CiEdit size={24} className="text-amber-700" />
-          </Link>
-        </div>
-      </div>
+      {topics.map((topic) => (
+        <TopicItem key={topic._id} topic={topic} />
+      ))}
     </React.Fragment>
   );
 };
