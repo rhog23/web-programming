@@ -1,9 +1,7 @@
 import React from "react";
 import { CiTrash } from "react-icons/ci";
-import { useRouter } from "next/navigation";
 
 const RemoveBtn = ({ id }) => {
-  const router = useRouter();
   const deleteTopic = async () => {
     const confirmed = window.confirm(
       "⚠️ Do you want to delete this topic? (Not reversible) ⚠️"
@@ -18,7 +16,7 @@ const RemoveBtn = ({ id }) => {
 
         // Check if the request was successful
         if (res.ok) {
-          router.refresh();
+          window.location.reload();
         } else {
           console.error("[ERROR] ❌ Failed to delete topic.");
         }
