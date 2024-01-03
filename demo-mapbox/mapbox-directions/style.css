@@ -1,0 +1,12 @@
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.title {
+  font-family: "DM Serif Display", serif;
+}
+
+#map {
+  width: 800px;
+  height: 600px;
+}

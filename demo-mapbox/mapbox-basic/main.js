@@ -1,6 +1,6 @@
 window.onload = function () {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoibWFwYm94cmVjaXBlcyIsImEiOiJjd3RhQmlzIn0.Wx0fWGCo3gs6fzta5QrLfw";
+    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbG9ndnpmNWcwNThyMnBvMmdlcjliZDljIn0.qIkjt-JRKHyqMe8DNZJ7ig";
   const geojson = {
     type: "FeatureCollection",
     features: [
@@ -32,17 +32,15 @@ window.onload = function () {
       },
     ],
   };
+
   const map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/streets-v11",
+    style: "mapbox://styles/mapbox/streets-v12",
     center: [104.03446700110115, 1.1312897724815876],
     zoom: 12.8,
-    projection: "globe",
   });
 
-  map.on("style.load", () => {
-    map.setFog({});
-  });
+  // map.on("style.load", () => {});
 
   for (const marker of geojson.features) {
     new mapboxgl.Marker({

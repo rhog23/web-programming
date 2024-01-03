@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    f
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Basic Leaflet Map</title>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
   </head>
@@ -17,12 +16,12 @@
     <div id="map" style="width: 600px; height: 400px"></div>
   </body>
   <script
-    src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
   <script>
-    var loc = [1.1292434251202235, 104.03422206883228];
+    var loc = [1.1285916785668448, 104.03354849933518];
     var map = L.map("map", {
       center: loc,
       zoom: 17,
@@ -34,7 +33,7 @@
     }).addTo(map);
 
     var myMarker = L.marker(loc, {
-      title: "My Point",
+      title: "Universal University 🏫",
     }).addTo(map);
   </script>
 </html>

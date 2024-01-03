@@ -1,14 +1,14 @@
 window.onload = function () {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoibWFwYm94cmVjaXBlcyIsImEiOiJjd3RhQmlzIn0.Wx0fWGCo3gs6fzta5QrLfw";
+    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbG9ndnpmNWcwNThyMnBvMmdlcjliZDljIn0.qIkjt-JRKHyqMe8DNZJ7ig";
   const map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/dark-v10",
-    center: [104.03156126832283, 1.1262184453720234],
+    style: "mapbox://styles/mapbox/dark-v11",
+    center: [104.0354718802255, 1.1291339818308566],
     zoom: 14.5,
   });
 
-  const start = [104.03156126832283, 1.1262184453720234];
+  const start = [104.0354718802255, 1.1291339818308566];
 
   async function getRoute(end) {
     const query = await fetch(
