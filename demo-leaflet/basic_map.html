@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peta Sederhana dengan Leaflet</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+      #map {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Membuat peta dengan Leaflet
+      var map = L.map("map").setView([-6.2088, 106.8456], 12);
+
+      // Membuat penanda pada koordinat Jakarta
+      var marker = L.marker([-6.2088, 106.8456]).addTo(map);
+
+      // Menambahkan popup ke penanda
+      marker.bindPopup("<b>Monumen Nasional</b>").openPopup();
+
+      // Membuat garis antara dua titik
+      //   var polyline = L.polyline(
+      //     [
+      //       [-6.2088, 106.8456],
+      //       [-6.195, 106.8156],
+      //     ],
+      //     {
+      //       color: "blue",
+      //       weight: 3,
+      //     }
+      //   ).addTo(map);
+
+      // Membuat poligon dengan bentuk segitiga
+      var polygon = L.polygon(
+        [
+          [-6.2088, 106.8456],
+          [-6.2, 106.85],
+          [-6.21, 106.86],
+          [-6.2088, 106.8456], // Titik terakhir harus sama dengan titik pertama
+        ],
+        {
+          color: "blue",
+          fillColor: "#0000ff",
+          fillOpacity: 0.5,
+        }
+      ).addTo(map);
+      
+
+      // Menambahkan tile layer (OpenStreetMap)
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+    </script>
+  </body>
+</html>
