@@ -1,6 +1,6 @@
 window.onload = function () {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbG9ndnpmNWcwNThyMnBvMmdlcjliZDljIn0.qIkjt-JRKHyqMe8DNZJ7ig";
+    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbTFpdjdwamUwc3J0MnFzYjZxN2JzcG9lIn0.7DRy2wEJK378U8cZnR_n-A";
   const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/dark-v11",
@@ -12,7 +12,7 @@ window.onload = function () {
 
   async function getRoute(end) {
     const query = await fetch(
-      `https://api.mapbox.com/directions/v5/mapbox/driving-traffic/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
+      `https://api.mapbox.com/directions/v5/mapbox/walking/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
       { method: "GET" }
     );
     const json = await query.json();
@@ -42,7 +42,7 @@ window.onload = function () {
         },
         paint: {
           "line-color": "#ffff3f",
-          "line-width": 5,
+          "line-width": 2,
           "line-opacity": 0.75,
         },
       });

@@ -1,6 +1,6 @@
 window.onload = function () {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbG9ndnpmNWcwNThyMnBvMmdlcjliZDljIn0.qIkjt-JRKHyqMe8DNZJ7ig";
+    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbTFpdjdwamUwc3J0MnFzYjZxN2JzcG9lIn0.7DRy2wEJK378U8cZnR_n-A";
   const geojson = {
     type: "FeatureCollection",
     features: [
@@ -35,7 +35,7 @@ window.onload = function () {
 
   const map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/streets-v12",
+    style: "mapbox://styles/mapbox/dark-v11",
     center: [104.03446700110115, 1.1312897724815876],
     zoom: 12.8,
   });

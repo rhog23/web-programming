@@ -11,7 +11,7 @@ body {
 
 #container {
   height: 100%;
-  display: flex;
+  display: block;
 }
 
 #sidebar {

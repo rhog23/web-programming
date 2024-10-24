@@ -1,6 +1,6 @@
 window.onload = function () {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoibWFwYm94cmVjaXBlcyIsImEiOiJjd3RhQmlzIn0.Wx0fWGCo3gs6fzta5QrLfw";
+    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbTFpdjdwamUwc3J0MnFzYjZxN2JzcG9lIn0.7DRy2wEJK378U8cZnR_n-A";
   const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/dark-v10",
@@ -83,7 +83,7 @@ window.onload = function () {
       },
       paint: {
         "line-color": "#a2d2ff",
-        "line-width": 8,
+        "line-width": 5,
       },
     });
   });

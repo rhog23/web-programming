@@ -2,44 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Demo Google Maps</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+      href="./style.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <h1>Google Map's Direction Service</h1>
-    <div id="map" class="gmap"></div>
-
     <div>
       <b>Start</b>
-      <select id="start">
+      <select
+        id="start"
+        style="margin-right: 16px"
+      >
         <option value="1.1312310612011882, 104.03348168094091">
           Universitas Universal
         </option>
-        <option value="0.749711, 104.190419">Vio-Vio Beach</option>
-        <option value="0.757833, 104.185445">Glory Melur Beach</option>
-        <option value="0.772340, 104.173835">Mirota Beach</option>
+        <option value="1.1333369331254879, 104.04760246503915">Hotel 01</option>
+        <option value="1.1451722622907907, 104.11531551450166">RS. Bhayangkara Batam</option>
+        <option value="1.6403466893182261, 103.68153251732608">
+          Mirota Beach
+        </option>
       </select>
-      <br />
       <b>Destination</b>
       <select id="end">
         <option value="1.1312310612011882, 104.03348168094091">
           Universitas Universal
         </option>
-        <option value="0.749711, 104.190419">Vio-Vio Beach</option>
+        <option value="1.1333369331254879, 104.04760246503915">Hotel 01</option>
         <option value="0.757833, 104.185445">Glory Melur Beach</option>
-        <option value="0.772340, 104.173835">Mirota Beach</option>
+        <option value="1.6403466893182261, 103.68153251732608">
+          Mirota Beach
+        </option>
       </select>
     </div>
 
+    <!-- Google Map Section -->
+    <div
+      id="map"
+      class="gmap"
+    ></div>
+
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1MgLuZuyqR_OGY3ob3M52N46TDBRI_9k&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1MgLuZuyqR_OGY3ob3M52N46TDBRI_9k&loading=async&callback=initMap"
       defer
     ></script>
     <script src="./index.js"></script>

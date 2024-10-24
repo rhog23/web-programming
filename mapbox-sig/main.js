@@ -1,6 +1,6 @@
 window.onload = function () {
   mapboxgl.accessToken =
-    "pk.eyJ1IjoibWFwYm94cmVjaXBlcyIsImEiOiJjd3RhQmlzIn0.Wx0fWGCo3gs6fzta5QrLfw";
+    "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbTFpdjdwamUwc3J0MnFzYjZxN2JzcG9lIn0.7DRy2wEJK378U8cZnR_n-A";
   const geojson = {
     type: "FeatureCollection",
     features: [
@@ -42,9 +42,10 @@ window.onload = function () {
     new mapboxgl.Marker({
       color: marker.properties.color,
     })
-      .setLngLat(marker.geometry.coordinates).setPopup(
+      .setLngLat(marker.geometry.coordinates)
+      .setPopup(
         new mapboxgl.Popup().setHTML(
-            `<h3>${marker.properties.title}</h3><p><strong>Keterangan:</strong>${marker.properties.desc}</p>`
+          `<h3>${marker.properties.title}</h3><p><strong>Keterangan:</strong>${marker.properties.desc}</p>`
         )
       )
       .addTo(map);

@@ -6,7 +6,7 @@ const initMap = () => {
 
   const map = new google.maps.Map(document.getElementById("map"), {
     center: coordKotaBatam,
-    zoom: 10,
+    zoom: 12,
   });
 
   directionsRenderer.setMap(map);
@@ -36,7 +36,7 @@ const calculateAndDisplayRoute = (
       destination: {
         query: end.value,
       },
-      travelMode: google.maps.TravelMode.DRIVING,
+      travelMode: google.maps.TravelMode.BICYCLING,
     })
     .then((response) => {
       directionsRenderer.setDirections(response);
