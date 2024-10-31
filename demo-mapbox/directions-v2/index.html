@@ -35,15 +35,6 @@
     </style>
   </head>
   <body>
-    <div id="controls">
-      <select id="destinationSelect">
-        <option value="">Select Destination</option>
-        <option value="[40.748817, -73.985428]">Empire State Building</option>
-        <option value="[40.689247, -74.044502]">Statue of Liberty</option>
-        <option value="[40.706086, -73.996864]">Brooklyn Bridge</option>
-      </select>
-    </div>
-
     <div id="map"></div>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
@@ -57,7 +48,7 @@
     <script>
       // Add your Mapbox access token here
       mapboxgl.accessToken =
-        "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbTFpdjdwamUwc3J0MnFzYjZxN2JzcG9lIn0.7DRy2wEJK378U8cZnR_n-A";
+        "pk.eyJ1IjoicmF5bW9uZHN1dmVycyIsImEiOiJjbTJ4MzE0aGMwMHFuMnFyNGxjYjR0eDJxIn0.IRgulH9huD4fnSAaUH2gnQ";
 
       // Initialize the map
       const map = new mapboxgl.Map({
@@ -97,18 +88,6 @@
       } else {
         alert("Geolocation is not supported by your browser");
       }
-
-      // Set destination based on dropdown selection
-      document
-        .getElementById("destinationSelect")
-        .addEventListener("change", (event) => {
-          const selectedDestination = event.target.value;
-
-          if (selectedDestination) {
-            const destinationCoords = JSON.parse(selectedDestination);
-            directions.setDestination(destinationCoords);
-          }
-        });
     </script>
   </body>
 </html>

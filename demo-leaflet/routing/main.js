@@ -1,6 +1,21 @@
-const map = L.map("map").setView([40.7128, -74.006], 13); // Default to New York City
+const map = L.map("map").setView([-6.194579290379242, 106.82607954405836], 12); // Default to Jakarta
 let userLocationMarker, destinationMarker, routeLayer, distanceLabel;
 let userLocation;
+
+// Create a custom icon
+const userLocationIcon = L.icon({
+  iconUrl: "./assets/person.png", // URL to the custom image or SVG
+  iconSize: [30, 30], // Size of the icon [width, height]
+  iconAnchor: [15, 30], // Point of the icon which will correspond to marker's location
+  popupAnchor: [0, -30], // Point from which the popup should open relative to the iconAnchor
+});
+
+const destinationLocationIcon = L.icon({
+  iconUrl: "./assets/location-pin.png", // URL to the custom image or SVG
+  iconSize: [30, 30], // Size of the icon [width, height]
+  iconAnchor: [15, 30], // Point of the icon which will correspond to marker's location
+  popupAnchor: [0, -30], // Point from which the popup should open relative to the iconAnchor
+});
 
 // Add OpenStreetMap tiles
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -20,7 +35,7 @@ function getUserLocation() {
         if (userLocationMarker) {
           map.removeLayer(userLocationMarker);
         }
-        userLocationMarker = L.marker(userLocation)
+        userLocationMarker = L.marker(userLocation, { icon: userLocationIcon })
           .addTo(map)
           .bindPopup("Your Location")
           .openPopup();
@@ -75,7 +90,7 @@ async function calculateRoute(destinationLatLng, profile) {
 
       // Draw the route on the map
       routeLayer = L.polyline(routeCoordinates, {
-        color: "blue",
+        color: "#ef4444",
         weight: 5,
       }).addTo(map);
 
@@ -134,7 +149,9 @@ document
         if (destinationMarker) {
           map.removeLayer(destinationMarker);
         }
-        destinationMarker = L.marker(destinationLatLng)
+        destinationMarker = L.marker(destinationLatLng, {
+          icon: destinationLocationIcon,
+        })
           .addTo(map)
           .bindPopup(`Destination: ${destination}`)
           .openPopup();
