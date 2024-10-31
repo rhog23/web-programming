@@ -1,34 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Leaflet OSRM Example</title>
+    <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>OSRM Route with Distance Display</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
     />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
     />
-    <link
-      rel="stylesheet"
-      href="./assets/leaflet-routing-machine.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./assets/index.css"
-    />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="font-sans bg-gray-100">
+    <!-- Controls Container -->
+    <div
+      class="absolute w-1/5 top-5 right-5 z-10 bg-sky-200/[.8] shadow-lg p-4 rounded-md flex flex-col"
+    >
+      <label
+        for="styleSelect"
+        class="block text-sm font-semibold"
+        >Map Style:</label
+      >
+      <select
+        id="styleSelect"
+        class="mb-4 border rounded p-2"
+      >
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+        <option value="terrain">Terrain</option>
+      </select>
+
+      <label
+        for="destinationInput"
+        class="block text-sm font-semibold"
+        >Enter Destination:</label
+      >
+      <input
+        type="text"
+        id="destinationInput"
+        class="border rounded p-2 mb-4"
+        placeholder="Enter a place name or address 🚩"
+      />
+
+      <label
+        for="profileSelect"
+        class="block text-sm font-semibold"
+        >Travel Mode:</label
+      >
+      <select
+        id="profileSelect"
+        class="border rounded p-2 mb-4"
+      >
+        <option value="driving">Driving🚗</option>
+        <option value="bicycle">Cycling🚲</option>
+        <option value="foot">Walking🚶🏽</option>
+      </select>
+
+      <button
+        id="getDirectionsButton"
+        class="bg-blue-700 text-white p-2 rounded"
+      >
+        Get Directions
+      </button>
+    </div>
+
+    <!-- Map Container -->
     <div
       id="map"
-      class="map"
+      class="h-screen z-0"
     ></div>
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
-    <!-- <script src="../dist/leaflet-routing-machine.js"></script> -->
-    <script src="Control.Geocoder.js"></script>
-    <script src="config.js"></script>
-    <script src="index.js"></script>
+
+    <script src="main.js"></script>
   </body>
 </html>
