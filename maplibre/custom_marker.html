@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multiple Custom Markers</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+    />
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+      const map = new maplibregl.Map({
+        container: "map",
+        style:
+          "https://api.maptiler.com/maps/streets/style.json?key=j9Dc06BG2KmY2wSQR6VV",
+        center: [12.550343, 55.665957],
+        zoom: 8,
+      });
+
+      // Array of marker data with coordinates
+      const markerData = [
+        {
+          coordinates: [12.550343, 55.665957],
+          imageUrl: "person.png",
+        },
+        {
+          coordinates: [12.550343, 55.665957],
+          imageUrl: "person.png",
+        },
+        {
+          coordinates: [12.65, 55.68],
+          imageUrl: "person.png",
+        },
+        {
+          coordinates: [12.7, 55.63],
+          imageUrl: "person.png",
+        },
+      ];
+
+      // Loop through each marker data and create a custom marker
+      markerData.forEach((marker) => {
+        const customMarker = document.createElement("img");
+        customMarker.src = marker.imageUrl; // Use the image URL from marker data
+        customMarker.style.width = "40px";
+        customMarker.style.height = "40px";
+
+        new maplibregl.Marker({ element: customMarker })
+          .setLngLat(marker.coordinates)
+          .addTo(map);
+      });
+    </script>
+  </body>
+</html>

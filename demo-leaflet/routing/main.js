@@ -4,7 +4,7 @@ let userLocation;
 
 // Create a custom icon
 const userLocationIcon = L.icon({
-  iconUrl: "./assets/person.png", // URL to the custom image or SVG
+  iconUrl: "./assets/person.png", // URL to the  custom image or SVG
   iconSize: [30, 30], // Size of the icon [width, height]
   iconAnchor: [15, 30], // Point of the icon which will correspond to marker's location
   popupAnchor: [0, -30], // Point from which the popup should open relative to the iconAnchor
