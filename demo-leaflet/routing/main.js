@@ -125,7 +125,8 @@ document
       return;
     }
 
-    const profile = document.getElementById("profileSelect").value;
+    // const profile = document.getElementById("profileSelect").value;
+    const profile = "driving";
 
     // Log the selected travel mode to confirm selection
     console.log(`Selected travel mode: ${profile}`);
